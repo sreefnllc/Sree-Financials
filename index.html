@@ -5,132 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sree Financials LLC | Financial Planning & Insurance Services</title>
   <meta name="description" content="Sree Financials LLC provides financial planning, retirement solutions, investment management, wealth management, health insurance, and Medicare guidance in Bridgewater, NJ." />
-
+  <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: 'Poppins', sans-serif; margin: 0; background: #f4f7fb; color: #333; line-height: 1.6; }
-    nav { background: #0a3d62; padding: 15px 20px; display: flex; justify-content: center; gap: 20px; position: sticky; top: 0; z-index: 1000; }
-    nav a { color: #fff; text-decoration: none; font-weight: 500; }
-    nav a:hover { text-decoration: underline; }
-
-    header { background: linear-gradient(rgba(10,61,98,0.85), rgba(10,61,98,0.85)), url('https://images.unsplash.com/photo-1523952578875-e6bb18b26645'); background-size: cover; background-position: center; color: #fff; padding: 100px 20px; text-align: center; }
-    header h1 { font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; max-width: 700px; margin: auto; }
-
-    section { padding: 70px 20px; max-width: 1200px; margin: auto; }
-    h2 { color: #0a3d62; margin-bottom: 20px; text-align: center; }
-
-    .about { max-width: 900px; margin: auto; text-align: center; }
-
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-    .card { background: #fff; padding: 25px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
-    .card:hover { transform: translateY(-8px); }
-
-    .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-
-    .cta { background: linear-gradient(135deg, #0a3d62, #1e6091); color: #fff; padding: 70px 20px; text-align: center; border-radius: 20px; }
-    .cta a { display: inline-block; background: #25D366; color: #fff; padding: 16px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 20px; }
-
-    footer { background: #0a3d62; color: #fff; text-align: center; padding: 25px; font-size: 0.9rem; }
-
-    @media(max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
+    :root{
+      --navy:#0a3d62; --blue:#1e6091; --bg:#f4f7fb; --card:#fff; --text:#333; --muted:#5d6b78; --wa:#25D366;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:16px;
     }
+    *{box-sizing:border-box}
+    body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.65}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .nav{
+      position:sticky;top:0;z-index:999;
+      background:rgba(10,61,98,.95);backdrop-filter:blur(8px);
+      padding:12px 18px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap
+    }
+    .brand{display:flex;align-items:center;gap:10px;margin-right:8px}
+    .brand img{height:44px;width:auto}
+    .brand span{color:#fff;font-weight:700;letter-spacing:.2px}
+    .nav a{color:#fff;font-weight:500;padding:8px 10px;border-radius:10px}
+    .nav a:hover{background:rgba(255,255,255,.12);text-decoration:none}
+
+    header{
+      background: linear-gradient(rgba(10,61,98,.82), rgba(10,61,98,.82)), url('cover.jpg');
+      background-size:cover;background-position:center;color:#fff;
+      padding:92px 18px;text-align:center
+    }
+    header h1{margin:0 0 10px;font-size:clamp(2rem,4vw,3rem)}
+    header p{margin:0 auto;max-width:860px;color:rgba(255,255,255,.92);font-size:1.1rem}
+    .hero-actions{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:600}
+    .btn-primary{background:var(--wa);color:#fff}
+    .btn-secondary{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.25)}
+    .btn:hover{text-decoration:none;transform:translateY(-1px)}
+    .wrap{max-width:1120px;margin:auto;padding:56px 18px}
+    h2{color:var(--navy);text-align:center;margin:0 0 18px}
+    .lead{max-width:900px;margin:0 auto 26px;text-align:center;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .card h3{margin:0 0 8px;color:var(--navy)}
+    .pill{display:inline-block;font-size:.85rem;color:var(--muted);background:#eaf2f9;padding:6px 10px;border-radius:999px;margin-bottom:10px}
+
+    .cta{
+      background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:22px;
+      padding:34px 18px;text-align:center;margin-top:18px
+    }
+    .cta p{margin:10px auto 0;max-width:900px;color:rgba(255,255,255,.92)}
+    footer{background:var(--navy);color:#fff;text-align:center;padding:22px 16px;margin-top:40px}
+    footer p{margin:6px 0;color:rgba(255,255,255,.92);font-size:.92rem}
+
+    .disclaimer{max-width:1120px;margin:18px auto 0;padding:0 18px;color:var(--muted);font-size:.92rem}
+    .disclaimer h3{color:var(--navy);margin:0 0 8px}
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <nav class="nav">
+    <div class="brand">
+      <img src="logo.png" alt="Sree Financials LLC logo">
+      <span>Sree Financials LLC</span>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<header id="home">
-  <h1>Sree Financials LLC</h1>
-  <p>Personalized Financial, Retirement & Insurance Guidance for Every Stage of Life</p>
-</header>
+  <header>
+    <h1>Personalized Financial & Insurance Guidance</h1>
+    <p>At Sree Financials LLC, you’re more than just a client—you’re part of our community. We help individuals, families, retirees, and business owners grow, protect, and manage their financial future with clarity and care.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" target="_blank" href="https://wa.me/19085403384?text=Hello,%20I’d%20like%20to%20book%20a%20consultation%20with%20Sree%20Financials%20LLC.">Book on WhatsApp</a>
+      <a class="btn btn-secondary" href="services.html">Explore Services</a>
+    </div>
+  </header>
 
-<section id="about">
-  <div class="about">
-    <h2>About Sree Financials LLC</h2>
-    <p>At Sree Financials LLC, you’re more than just a client—you’re part of our community. We help individuals, families, retirees, and business owners grow, protect, and manage their financial future through personalized planning, investments, retirement solutions, health insurance, and Medicare guidance.</p>
-    <p>Our focus is on clarity, trust, and long-term relationships—so you always feel supported and confident in your decisions.</p>
+  <main class="wrap">
+    <h2>Services Overview</h2>
+    <p class="lead">Clear guidance across financial planning, retirement, investments, wealth management, health insurance, and Medicare — tailored to your goals.</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="pill">Planning</span>
+        <h3>Financial Planning</h3>
+        <p>Personalized roadmaps designed around your goals and life priorities.</p>
+        <p><a href="financial-planning.html">Learn more →</a></p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Investments</span>
+        <h3>Investment Management</h3>
+        <p>Thoughtful strategies focused on long-term growth and stability.</p>
+        <p><a href="investment-management.html">Learn more →</a></p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Retirement</span>
+        <h3>Retirement Planning</h3>
+        <p>Preparation for income needs, lifestyle goals, and long-term security.</p>
+        <p><a href="retirement-planning.html">Learn more →</a></p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Wealth</span>
+        <h3>Wealth Management</h3>
+        <p>Holistic planning to help protect and grow your assets over time.</p>
+        <p><a href="wealth-management.html">Learn more →</a></p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Insurance</span>
+        <h3>Health Insurance</h3>
+        <p>Guidance to understand plan options and select suitable coverage.</p>
+        <p><a href="health-insurance.html">Learn more →</a></p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Medicare</span>
+        <h3>Medicare Planning</h3>
+        <p>Help navigating enrollment, coverage choices, and plan comparisons.</p>
+        <p><a href="medicare-planning.html">Learn more →</a></p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h2 style="color:#fff;margin:0 0 6px;">Ready to talk?</h2>
+      <p>Reach out anytime — we’ll help you understand your options and plan with confidence.</p>
+      <div class="hero-actions" style="margin-top:16px;">
+        <a class="btn btn-primary" target="_blank" href="https://wa.me/19085403384?text=Hello,%20I’d%20like%20to%20book%20a%20consultation%20with%20Sree%20Financials%20LLC.">Book on WhatsApp</a>
+        <a class="btn btn-secondary" href="contact.html">Contact Details</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="disclaimer">
+    <h3>Important Disclosure</h3>
+    <p>Sree Financials LLC provides general financial, insurance, and Medicare-related information intended for educational purposes only. This website does not constitute financial, investment, tax, or legal advice. Services and strategies discussed may not be suitable for every individual. Please consult directly with a qualified professional regarding your specific situation. Insurance and Medicare services are subject to plan availability, eligibility, and carrier guidelines.</p>
   </div>
-</section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Financial Planning</h3>
-      <p>Our financial planning services are designed to give you clarity and confidence about your financial future. We take time to understand your income, expenses, goals, family responsibilities, and long-term vision.</p>
-      <p>By creating a personalized financial roadmap, we help you manage cash flow, plan for major life events, and make informed decisions that align with your values and priorities.</p>
-    </div>
-
-    <div class="card">
-      <h3>Investment Management</h3>
-      <p>Investment management at Sree Financials LLC focuses on long-term growth, stability, and risk awareness. We help you understand your investment options and build strategies aligned with your financial goals and comfort level.</p>
-      <p>Our approach emphasizes thoughtful planning, diversification, and ongoing review to help you stay on track as markets and life circumstances change.</p>
-    </div>
-
-    <div class="card">
-      <h3>Retirement Planning</h3>
-      <p>Retirement planning is about preparing for a future where you can live comfortably and confidently. We help you plan for retirement income, lifestyle goals, and long-term financial security.</p>
-      <p>Whether retirement is years away or just around the corner, we guide you through strategies that support a smooth and stress-free transition.</p>
-    </div>
-
-    <div class="card">
-      <h3>Wealth Management</h3>
-      <p>Our wealth management services are designed to help protect and grow your assets while aligning with your long-term objectives. We take a holistic view of your financial picture to ensure consistency and balance.</p>
-      <p>This includes asset organization, long-term planning, and strategies designed to support both current needs and future aspirations.</p>
-    </div>
-
-    <div class="card">
-      <h3>Health Insurance</h3>
-      <p>Navigating health insurance options can be overwhelming. We help individuals, families, and business owners understand available health insurance plans and choose coverage that fits their healthcare needs and budget.</p>
-      <p>Our goal is to simplify the process so you feel informed, supported, and confident in your health coverage decisions.</p>
-    </div>
-
-    <div class="card">
-      <h3>Medicare Planning</h3>
-      <p>Medicare planning can be complex, especially with changing rules and options. We provide clear, easy-to-understand guidance to help you navigate Medicare choices with confidence.</p>
-      <p>From understanding enrollment periods to comparing plan options, we support you in making decisions that align with both your healthcare and financial needs.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Why Choose Us</h2>
-  <div class="why">
-    <div class="card">Client-first, community-driven approach</div>
-    <div class="card">Personalized one-on-one guidance</div>
-    <div class="card">Clear, easy-to-understand strategies</div>
-    <div class="card">Support for financial & insurance needs</div>
-  </div>
-</section>
-
-<section id="contact" class="cta">
-  <h2>Contact Sree Financials LLC</h2>
-  <p><strong>Phone:</strong> +1 908-540-3384</p>
-  <p><strong>Email:</strong> sree.financials24@gmail.com</p>
-  <p><strong>Address:</strong> 18 Sterling Dr, Bridgewater, NJ 08807</p>
-
-  <a href="https://wa.me/19085403384?text=Hello,%20I’d%20like%20to%20book%20a%20consultation%20with%20Sree%20Financials%20LLC." target="_blank">Book Appointment on WhatsApp</a>
-</section>
-
-<section style="max-width:1200px;margin:auto;padding:40px 20px;font-size:0.9rem;color:#555;">
-  <h3 style="color:#0a3d62;">Important Disclosure</h3>
-  <p>Sree Financials LLC provides general financial, insurance, and Medicare-related information intended for educational purposes only. This website does not constitute financial, investment, tax, or legal advice. Services and strategies discussed may not be suitable for every individual. Please consult directly with a qualified professional regarding your specific situation.</p>
-  <p>Insurance and Medicare services are subject to plan availability, eligibility, and carrier guidelines.</p>
-</section>
-
-<footer>
-  <p>© 2026 Sree Financials LLC. All Rights Reserved.</p>
-  <p>Serving Bridgewater, NJ and surrounding areas with personalized financial planning, retirement solutions, health insurance, and Medicare guidance.</p>
-</footer>
+  <footer>
+    <p>© 2026 Sree Financials LLC. All Rights Reserved.</p>
+    <p>18 Sterling Dr, Bridgewater, NJ 08807 | +1 908-540-3384 | sree.financials24@gmail.com</p>
+  </footer>
 
 </body>
 </html>
