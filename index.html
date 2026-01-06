@@ -18,23 +18,40 @@
     body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.65}
     a{color:var(--blue);text-decoration:none}
     a:hover{text-decoration:underline}
-
+.logo{
+  height: 70px;          /* makes logo clearly visible */
+  width: auto;
+  background: #ffffff;  /* white background for contrast */
+  padding: 6px 10px;
+  border-radius: 8px;
+}
     .nav{
       position:sticky;top:0;z-index:999;
       background:rgba(10,61,98,.95);backdrop-filter:blur(8px);
-      padding:12px 18px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap
+      padding:10px 18px;display:flex;align-items:center;justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
     }
     .brand{display:flex;align-items:center;gap:10px;margin-right:8px}
     .brand img{height:44px;width:auto}
     .brand span{color:#fff;font-weight:700;letter-spacing:.2px}
-    .nav a{color:#fff;font-weight:500;padding:8px 10px;border-radius:10px}
+    .nav a{color:#fff;font-weight:500;padding:8px 10px;border-radius:10px; white-space:nowrap;}
     .nav a:hover{background:rgba(255,255,255,.12);text-decoration:none}
 
     header{
-      background: linear-gradient(rgba(10,61,98,.82), rgba(10,61,98,.82)), url('cover.jpg');
-      background-size:cover;background-position:center;color:#fff;
-      padding:92px 18px;text-align:center
-    }
+  background:
+    linear-gradient(rgba(10,61,98,.45), rgba(10,61,98,.45)),
+    url('cover.jpg');
+  background-size: cover;
+  background-position: center;
+  color:#fff;
+  padding:72px 18px;
+  text-align:center;
+  min-height: 420px;   /* ensures the cover shows */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
     header h1{margin:0 0 10px;font-size:clamp(2rem,4vw,3rem)}
     header p{margin:0 auto;max-width:860px;color:rgba(255,255,255,.92);font-size:1.1rem}
     .hero-actions{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -60,13 +77,22 @@
 
     .disclaimer{max-width:1120px;margin:18px auto 0;padding:0 18px;color:var(--muted);font-size:.92rem}
     .disclaimer h3{color:var(--navy);margin:0 0 8px}
+    @media (max-width: 720px){
+  .brand span{ display:none; }     /* hides text so links fit */
+  .nav{ justify-content:center; }
+  .nav a{ padding:7px 8px; font-size:0.95rem; }
+}
   </style>
 </head>
 <body>
 
   <nav class="nav">
     <div class="brand">
-      <img src="logo.png" alt="Sree Financials LLC logo">
+      <img 
+  src="logo.png" 
+  alt="Sree Financials LLC logo"
+  class="logo"
+/>
       <span>Sree Financials LLC</span>
     </div>
     <a href="index.html">Home</a>
@@ -153,3 +179,4 @@
 
 </body>
 </html>
+
